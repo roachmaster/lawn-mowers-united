@@ -34,7 +34,7 @@ spec:
             failureThreshold: 10
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: k3s
+              value: k3s, memory
             - name: PI_DB_HOST
               value: pi-mariadb
             - name: SPRING_DATASOURCE_PASSWORD

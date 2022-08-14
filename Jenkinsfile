@@ -4,7 +4,7 @@ node {
     }
 
     stage("Build"){
-        sh "ls"
+        sh "env"
         sh "mvn clean install"
         cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/Cucumber-*.json', jsonReportDirectory: 'build/reports/tests/acceptanceTest', pendingStepsNumber: -1, reportTitle: 'WeddingRsvpRegistry', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
     }

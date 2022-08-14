@@ -1,0 +1,15 @@
+kube:
+  name: pi-4gb-0
+  port: 30710
+  db:
+    port: 30306
+
+spring:
+  datasource:
+    url: jdbc:mariadb://${kube.name}:${kube.db.port}/LAWN_MOWER_UNITED_DATA
+    username: root
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+

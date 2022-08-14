@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wedding-rsvp-registry
+  name: lawn-mowers-united
 spec:
   selector:
     matchLabels:
-      app: wedding-rsvp-registry
+      app: lawn-mowers-united
   replicas: 1
   template:
     metadata:
       labels:
-        app: wedding-rsvp-registry
+        app: lawn-mowers-united
     spec:
       containers:
-        - name: wedding-rsvp-registry
-          image: leonardorocha1990/wedding-rsvp-registry:0.0.1-SNAPSHOT
+        - name: lawn-mowers-united
+          image: leonardorocha1990/lawn-mowers-united:0.0.1-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

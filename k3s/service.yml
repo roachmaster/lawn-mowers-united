@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wedding-rsvp-registry
+  name: lawn-mowers-united
   labels:
-    app: wedding-rsvp-registry
+    app: lawn-mowers-united
 spec:
   type: NodePort
   ports:
     - port: 8080
       nodePort: 30710
       protocol: TCP
-      name: wedding-rsvp-registry
+      name: lawn-mowers-united
   selector:
-    app: wedding-rsvp-registry
+    app: lawn-mowers-united

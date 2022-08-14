@@ -12,7 +12,7 @@ node {
         withCredentials([usernamePassword(credentialsId: '87e61f11-079d-4052-b083-ea5859f0f85b', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
             def dockerVersion = '0.0.1-SNAPSHOT'
             dockerBuild(dockerName:"${DOCKER_USERNAME}/lawn-mowers-united:${dockerVersion}",
-                        dockerOpt:"--build-arg JAR_FILE=build/libs/weddingRsvpRegistry-${dockerVersion}.jar",
+                        dockerOpt:"--build-arg JAR_FILE=lawn-mowers-united-service/target/lawn-mowers-united-service-${dockerVersion}.jar",
                         DOCKER_PASSWORD: "${DOCKER_PASSWORD}",
                         DOCKER_USERNAME:"${DOCKER_USERNAME}")
         }

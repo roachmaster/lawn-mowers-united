@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LawnMowersCompanyDbAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lawn-mowers-united-service</a> &gt; <a href="index.source.html" class="el_package">com.lessonsbyleo.LawnMowersUnited.db.adapter</a> &gt; <span class="el_source">LawnMowersCompanyDbAdapter.java</span></div><h1>LawnMowersCompanyDbAdapter.java</h1><pre class="source lang-java linenums">package com.lessonsbyleo.LawnMowersUnited.db.adapter;
+
+import com.lessonsbyleo.LawnMowersUnited.data.LawnMowerCompany;
+import com.lessonsbyleo.LawnMowersUnited.db.entity.LawnMowerCompanyEntity;
+import com.lessonsbyleo.LawnMowersUnited.db.exception.InvalidLawnMowerCompany;
+import com.lessonsbyleo.LawnMowersUnited.db.factory.LawnMowerCompanyEntityFactory;
+import com.lessonsbyleo.LawnMowersUnited.db.repo.LawnMowerCompanyRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+@Component
+<span class="fc" id="L16">public class LawnMowersCompanyDbAdapter implements LawnMowersCompanyDbAdapterInf {</span>
+    @Autowired
+    private LawnMowerCompanyRepo lawnMowerCompanyRepo;
+
+    @Override
+    public void delete(LawnMowerCompany lawnMowerCompany) {
+<span class="fc" id="L22">        LawnMowerCompanyEntity lawnMowerCompanyEntity = LawnMowerCompanyEntityFactory.create(lawnMowerCompany);</span>
+<span class="fc" id="L23">        lawnMowerCompanyRepo.delete(lawnMowerCompanyEntity);</span>
+<span class="fc" id="L24">    }</span>
+
+    @Override
+    public boolean doesAccountExist(LawnMowerCompany lawnMowerCompany){
+<span class="fc" id="L28">        LawnMowerCompanyEntity lawnMowerCompanyEntity = LawnMowerCompanyEntityFactory.create(lawnMowerCompany);</span>
+<span class="fc" id="L29">        LawnMowerCompanyEntity lawnMowerCompanyEntityFound = lawnMowerCompanyRepo.findAllByLawnMowerCompanyKey(lawnMowerCompanyEntity.getLawnMowerCompanyKey());</span>
+<span class="fc" id="L30">        return Objects.nonNull(lawnMowerCompanyEntityFound);</span>
+    }
+
+    @Override
+    public void createAccount(LawnMowerCompany lawnMowerCompany) {
+<span class="fc" id="L35">        LawnMowerCompanyEntity lawnMowerCompanyEntity = LawnMowerCompanyEntityFactory.create(lawnMowerCompany);</span>
+<span class="fc" id="L36">        lawnMowerCompanyRepo.save(lawnMowerCompanyEntity);</span>
+<span class="fc" id="L37">    }</span>
+
+    @Override
+    public List&lt;LawnMowerCompany&gt; getLawnMowerAccounts() {
+<span class="fc" id="L41">        List&lt;LawnMowerCompanyEntity&gt; entities = lawnMowerCompanyRepo.findAll();</span>
+<span class="fc" id="L42">        List&lt;LawnMowerCompany&gt; lawnMowerCompanies = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for(LawnMowerCompanyEntity entity: entities){</span>
+<span class="fc" id="L44">            LawnMowerCompany lawnMowerCompany = new LawnMowerCompany(entity);</span>
+<span class="fc" id="L45">            lawnMowerCompanies.add(lawnMowerCompany);</span>
+<span class="fc" id="L46">        }</span>
+<span class="fc" id="L47">        return lawnMowerCompanies;</span>
+    }
+
+    @Override
+    public void deleteAll() {
+<span class="fc" id="L52">        lawnMowerCompanyRepo.deleteAll();</span>
+<span class="fc" id="L53">    }</span>
+
+    @Override
+    public LawnMowerCompany getAccount(String email) throws InvalidLawnMowerCompany {
+<span class="fc" id="L57">        LawnMowerCompanyEntity entity = lawnMowerCompanyRepo.findLawnMowerCompanyEntityByLawnMowerCompanyKey_Email(email);</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if(Objects.isNull(entity)){</span>
+<span class="nc" id="L59">            throw new InvalidLawnMowerCompany(email);</span>
+        }
+<span class="fc" id="L61">        return new LawnMowerCompany(entity);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

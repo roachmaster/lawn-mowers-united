@@ -1,0 +1,12 @@
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\db\adapter\LawnMowersCompanyDBAdapterTestDouble.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\event\consumer\NewAccountCreationEventConsumerTestDouble.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\LawnMowersUnitedApplicationTests.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\LawnMowersUnitedBddConfig.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\LawnMowersUnitedBddTest.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\event\consumer\ServiceRequestEventConsumerTestDouble.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\steps\LawnMowerCustomerServiceRequestSteps.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\customer\CustomerTestFactory.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\steps\LawnMowerCompanyAccountCreationSteps.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\notification\EmailNotificationAdapterTestDouble.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\db\adapter\LawnMowerCustomerDBAdapterTestDouble.java
+C:\Users\leona\Projects\lawn-mowers-united\lawn-mowers-united-service\src\test\java\com\lessonsbyleo\LawnMowersUnited\bdd\company\LawnMowerCompanyTestFactory.java

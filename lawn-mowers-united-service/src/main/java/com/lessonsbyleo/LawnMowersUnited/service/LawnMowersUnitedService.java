@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
 
-import static com.lessonsbyleo.LawnMowersUnited.data.AccountCreationState.*;
+import static com.lessonsbyleo.LawnMowersUnited.data.AccountCreationState.ACCOUNT_CREATED;
+import static com.lessonsbyleo.LawnMowersUnited.data.AccountCreationState.CANCELED_ACCOUNT_EXISTS;
 
 @Service
 public class LawnMowersUnitedService implements LawnMowersUnitedServiceInf {
     @Autowired
     private LawnMowersCompanyDbAdapterInf lawnMowersCompanyDbAdapter;
-
     @Autowired
     private LawnMowerCustomerDBAdapterInf lawnMowerCustomerDBAdapterInf;
     @Autowired
@@ -57,7 +57,6 @@ public class LawnMowersUnitedService implements LawnMowersUnitedServiceInf {
     public List<LawnMowerCompany> getLawnMowerCompanyAccounts() {
         return lawnMowersCompanyDbAdapter.getLawnMowerAccounts();
     }
-
     @Override
     public ServiceResponse requestLawnService(Customer customer, LawnMowerCompany lawnMowerCompany) {
         ServiceResponse response = new ServiceResponse();

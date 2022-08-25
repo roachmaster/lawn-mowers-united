@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import static com.lessonsbyleo.LawnMowersUnited.data.ServiceRequestState.INVALID_LAWN_MOWER_COMPANY;
-
 @Service
 public class AccountService {
     private static final Logger logger = LoggerFactory.getLogger(AccountService.class);

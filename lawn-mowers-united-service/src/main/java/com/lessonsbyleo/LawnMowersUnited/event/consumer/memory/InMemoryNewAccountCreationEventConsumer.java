@@ -16,6 +16,5 @@ public class InMemoryNewAccountCreationEventConsumer implements NewAccountCreati
     @Override
     public void consume(LawnMowersUnitedEvent lawnMowersUnitedEvent) {
         accountService.notifyLawnMowerCompany(lawnMowersUnitedEvent);
-
     }
 }

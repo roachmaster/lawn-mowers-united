@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DispatcherService {
-
     @Autowired
     private LawnMowersUnitedNotificationAdapter notificationAdapter;
     public void dispatch(LawnMowersUnitedEvent lawnMowersUnitedEvent) {

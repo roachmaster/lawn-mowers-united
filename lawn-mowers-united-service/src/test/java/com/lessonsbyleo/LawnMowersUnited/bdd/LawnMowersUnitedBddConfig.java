@@ -1,7 +1,7 @@
 package com.lessonsbyleo.LawnMowersUnited.bdd;
 
-import com.lessonsbyleo.LawnMowersUnited.event.publisher.LawnMowerCustomerServiceRequestEventPublisher;
-import com.lessonsbyleo.LawnMowersUnited.event.publisher.NewAccountCreationEventPublisher;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.inf.LawnMowerCustomerServiceRequestEventPublisher;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.inf.NewAccountCreationEventPublisher;
 import com.lessonsbyleo.LawnMowersUnited.notification.email.EmailSender;
 import com.lessonsbyleo.LawnMowersUnited.notification.LawnMowersUnitedNotificationAdapter;
 import org.mockito.Mockito;

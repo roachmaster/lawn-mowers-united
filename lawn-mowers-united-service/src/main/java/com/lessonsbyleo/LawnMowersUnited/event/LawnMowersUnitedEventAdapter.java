@@ -2,31 +2,30 @@ package com.lessonsbyleo.LawnMowersUnited.event;
 
 import com.lessonsbyleo.LawnMowersUnited.data.LawnMowerCompany;
 import com.lessonsbyleo.LawnMowersUnited.data.Customer;
-import com.lessonsbyleo.LawnMowersUnited.event.publisher.LawnMowerCustomerServiceRequestEventPublisher;
-import com.lessonsbyleo.LawnMowersUnited.event.publisher.NewAccountCreationEventPublisher;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.factory.EventPublisherFactory;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.inf.LawnMowerCustomerServiceRequestEventPublisher;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.inf.NewAccountCreationEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Objects;
-
 @Component
 public class LawnMowersUnitedEventAdapter {
-    private final NewAccountCreationEventPublisher newAccountCreationEventPublisher;
-    private final LawnMowerCustomerServiceRequestEventPublisher lawnMowerCustomerServiceRequestEventPublisher;
+    private final EventPublisherFactory eventPublisherFactory;
 
     @Autowired
-    public LawnMowersUnitedEventAdapter(NewAccountCreationEventPublisher newAccountCreationEventPublisher, LawnMowerCustomerServiceRequestEventPublisher lawnMowerCustomerServiceRequestEventPublisher) {
-        this.newAccountCreationEventPublisher = newAccountCreationEventPublisher;
-        this.lawnMowerCustomerServiceRequestEventPublisher = lawnMowerCustomerServiceRequestEventPublisher;
+    public LawnMowersUnitedEventAdapter(EventPublisherFactory eventPublisherFactory) {
+        this.eventPublisherFactory = eventPublisherFactory;
     }
 
     public void publishNewAccountCreationEventFor(LawnMowerCompany lawnMowerCompany) {
-        LawnMowersUnitedEvent newAccountCreationEvent = LawnMowersUnitedEventFactory.createNewAccountCreationEventFor(lawnMowerCompany);
-        newAccountCreationEventPublisher.publish(newAccountCreationEvent);
+        LawnMowersUnitedEvent event = LawnMowersUnitedEventFactory.createNewAccountCreationEventFor(lawnMowerCompany);
+        NewAccountCreationEventPublisher eventPublisher = eventPublisherFactory.createNewAccountCreationEventPublisher();
+        eventPublisher.publish(event);
     }
 
     public void publishServiceRequestEvent(Customer customer, LawnMowerCompany lawnMowerCompany){
-        LawnMowersUnitedEvent customerServiceRequestEvent = LawnMowersUnitedEventFactory.createCustomerServiceRequest(customer, lawnMowerCompany);
-        lawnMowerCustomerServiceRequestEventPublisher.publish(customerServiceRequestEvent);
+        LawnMowersUnitedEvent event = LawnMowersUnitedEventFactory.createCustomerServiceRequest(customer, lawnMowerCompany);
+        LawnMowerCustomerServiceRequestEventPublisher eventPublisher = eventPublisherFactory.createServiceRequestEventPublisher();
+        eventPublisher.publish(event);
     }
 }

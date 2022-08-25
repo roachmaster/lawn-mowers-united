@@ -8,12 +8,11 @@ import com.lessonsbyleo.LawnMowersUnited.db.adapter.LawnMowerCustomerDBAdapterTe
 import com.lessonsbyleo.LawnMowersUnited.db.adapter.LawnMowersCompanyDBAdapterTestDouble;
 import com.lessonsbyleo.LawnMowersUnited.event.LawnMowersUnitedEvent;
 import com.lessonsbyleo.LawnMowersUnited.event.consumer.LawnMowerCustomerServiceRequestEventConsumer;
-import com.lessonsbyleo.LawnMowersUnited.event.publisher.LawnMowerCustomerServiceRequestEventPublisher;
+import com.lessonsbyleo.LawnMowersUnited.event.publisher.inf.LawnMowerCustomerServiceRequestEventPublisher;
 import com.lessonsbyleo.LawnMowersUnited.notification.email.EmailSender;
 import com.lessonsbyleo.LawnMowersUnited.service.LawnMowersUnitedServiceInf;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

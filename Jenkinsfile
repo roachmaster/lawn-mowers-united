@@ -6,7 +6,7 @@ node {
     stage("Build"){
         sh "env"
         sh "/opt/apache-maven-3.8.6/bin/mvn clean install"
-        cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/Cucumber-*.json', jsonReportDirectory: '**/target/cucumber', pendingStepsNumber: -1, reportTitle: 'WeddingRsvpRegistry', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+        cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/Cucumber-*.json', jsonReportDirectory: '**/target/cucumber', pendingStepsNumber: -1, reportTitle: 'LawnMowersUnited', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
     }
 
     stage("Docker Build"){

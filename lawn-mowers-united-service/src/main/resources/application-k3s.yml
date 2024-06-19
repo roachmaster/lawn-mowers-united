@@ -1,5 +1,5 @@
 kube:
-  name: pi-4gb-0
+  name: raspberrypi-1
   port: 30710
   db:
     port: 30306

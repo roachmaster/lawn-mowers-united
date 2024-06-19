@@ -5,7 +5,7 @@ node {
 
     stage("Build"){
         sh "env"
-        sh "mvn clean install"
+        sh "${MAVEN_HOME}/bin/mvn clean install"
         cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: "**/Cucumber-*.json", jsonReportDirectory: "lawn-mowers-united-service/target/cucumber/", pendingStepsNumber: -1, reportTitle: 'LawnMowersUnited', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
     }
 
